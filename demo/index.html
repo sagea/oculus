@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Oculus Demo</title>
+    <link type="text/css" href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="me">
+                Alexander Sage
+            </div>
+        </nav>
+        <header>
+            <h1>Oculus Demo</h1>
+        </header>
+        <main class="demo-container">
+            <section id="demo1" class="demo">
+                <h2>Table Demo</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Email</td>
+                        </tr>
+                    </thead>
+                    <tbody data-oculus="demo1">
+
+                    </tbody>
+                </table>
+
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+
+    <script src="../dist/oculus.js"></script>
+
+    <script>
+
+        var demo1Data = [{"firstName": "Janice", "lastName": "Bell", "email": "jbell0@bluehost.com"}, {"firstName": "Marilyn", "lastName": "Lawson", "email": "mlawson1@gizmodo.com"}, {"firstName": "Joe", "lastName": "Bell", "email": "jbell2@geocities.jp"}, {"firstName": "Ernest", "lastName": "Alvarez", "email": "ealvarez3@irs.gov"}, {"firstName": "Jean", "lastName": "Hansen", "email": "jhansen4@canalblog.com"}, {"firstName": "Alan", "lastName": "Gilbert", "email": "agilbert5@alibaba.com"}, {"firstName": "Jesse", "lastName": "Rodriguez", "email": "jrodriguez6@wufoo.com"}, {"firstName": "Victor", "lastName": "Shaw", "email": "vshaw7@usa.gov"}, {"firstName": "Jennifer", "lastName": "Lawson", "email": "jlawson8@t.co"}, {"firstName": "Earl", "lastName": "Bishop", "email": "ebishop9@tmall.com"}];
+        var demo1 = oculus.create({
+            name: 'demo1',
+            data: demo1Data,
+            template: '<tr><td>{firstName}</td><td>{lastName}</td><td>{email}</td></tr>'
+        });
+        demo1.render();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+
+/* Main Styles */
+*{
+    font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #616f7b;
+}
+
+h1, h2, h3, h4, h5,h6{
+    font-weight: 100;
+}
+
+body{
+    background-color: #f1f4f4;
+}
+
+nav{
+    padding:10px;
+    background-color:white;
+    border-bottom: 1px solid #ced2d5;
+}
+nav .me{
+    font-size:1.1em;
+}
+header{
+    padding:20px;
+    background-color: #47bfbd;
+}
+header h1{
+    font-weight:100;
+    color: white;
+}
+main{
+    max-width: 100%;
+    width: 800px;
+    margin: 10px auto;
+}
+main .demo{
+    background-color: #fff;
+    border: 1px solid #ced2d5;
+    padding: 20px;
+    margin: 10px 0  ;
+}
+
+
+
+/* Table Demo Styles */
+table, td{
+    border-collapse: collapse;
+    font-size: 12px;
+}
+table{
+    width: 100%;
+    color:#667786;
+    border:1px solid #65a8d7;
+}
+table thead{
+    text-align:center;
+    background-color: #65a8d7;
+    font-weight:100;
+}
+table thead td{
+    color: #d5e7f3;
+    border:1px solid #65a8d7;
+    padding: 10px 0;
+}
+table tbody tr:nth-child(even) {
+    background-color: #f1f4f4;
+}
+
+table tbody tr td {
+    border-bottom:1px solid #65a8d7;
+    padding: 10px 5px;
+    border-collapse: collapse;
+}
