@@ -3,18 +3,16 @@ Render repeating templates using HTML data-* attribute.
 
 '''html
 
-<table>
-    <thead>
-        <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Email</td>
-        </tr>
-    </thead>
-    <tbody data-oculus="demo1">
-
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody data-oculus="demo1"></tbody>
+    </table>
 
 
     <script src="../dist/oculus.js"></script>
