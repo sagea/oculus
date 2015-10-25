@@ -14,7 +14,7 @@ Render repeating templates using HTML data-* attribute.
 </table>
 
 
-<script src="../dist/oculus.js"></script>
+<script src="oculus.js"></script>
 
 <script>
     var demo1Data = [{firstName: 'John', lastName: 'Doe', email: 'jdoe@email.com'}];
