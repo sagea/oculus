@@ -24,12 +24,9 @@ class utility {
 class OculusRepeat extends utility {
     constructor (obj) {
         super(obj);
-
         this.name = obj.name;
         this.data = obj.data;
-        this.matches = obj.template.match(/{(.*?)}/g);
         this.template = obj.template;
-
     }
 
     render () {

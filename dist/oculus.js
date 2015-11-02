@@ -50,10 +50,8 @@ var OculusRepeat = (function (_utility) {
         _classCallCheck(this, OculusRepeat);
 
         _get(Object.getPrototypeOf(OculusRepeat.prototype), 'constructor', this).call(this, obj);
-
         this.name = obj.name;
         this.data = obj.data;
-        this.matches = obj.template.match(/{(.*?)}/g);
         this.template = obj.template;
     }
 
