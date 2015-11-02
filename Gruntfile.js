@@ -1,5 +1,17 @@
-module.exports = function(grunt){
+var prefix = [
+    '(function (root) {'
+].join('\n');
+var suffix = [
+    '   root.oculus = {',
+    '      Create: function(obj){',
+    '          return new OculusRepeat(obj)',
+    '      }',
+    '   }',
+    '}(this));'
+].join('\n');
 
+module.exports = function (grunt) {
+    require("load-grunt-tasks")(grunt);
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         banner: [
@@ -15,7 +27,8 @@ module.exports = function(grunt){
                 curly: true,
                 eqeqeq: true,
                 eqnull: true,
-                browser: true
+                browser: true,
+                esnext: true
             },
             src: ['src/oculus.js']
         },
@@ -40,28 +53,42 @@ module.exports = function(grunt){
             },
             minify: {
                 files: {
-                    'dist/oculus.min.js': ['src/oculus.js']
+                    'dist/oculus.min.js': ['dist/oculus.js']
                 }
             }
         },
         watch: {
             src: {
                 files: 'src/oculus.js',
-                tasks: ['build']
+                tasks: ['b']
+            }
+        },
+        babel: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    "dist/oculus.js": "src/oculus.es6.js"
+                }
+            }
+        },
+        wrap: {
+            basic: {
+                src: ['dist/oculus.js'],
+                dest: 'dist/oculus.js',
+                options: {
+                    wrapper: [prefix, suffix]
+                }
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
     // Watch
-    grunt.registerTask('w', ['watch:src']);
+    grunt.registerTask('w', ['watch']);
 
     // Build
-    grunt.registerTask('b', ['jshint:src', 'copy:main', 'uglify:minify']);
+    grunt.registerTask('b', ['jshint:src', 'babel', 'wrap', 'uglify:minify']);
 
     // Test
     grunt.registerTask('test', []);
